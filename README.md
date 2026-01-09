@@ -1,30 +1,27 @@
 # library-management-system
 Data Management System application
 
-# Dominusoft Kids Website
+Features:
+- Maven project with sqlite-jdbc dependency.
+- SQLite database `library.db` created automatically.
+- Book hierarchy: `Book` (abstract), `EBook`, `PrintedBook`.
+- Generic `Library<T extends Book>` using `DatabaseManager` for persistence.
+- Exceptions for error handling.
+- Swing GUI with full features: add, edit, delete, search, borrow, return.
+- Double-click row to view subclass-specific field (demonstrates casting).
 
-## Project Description
-Dominusoft Kids is an educational and informative website for children and parents. It includes multiple pages, a blog, a contact form, and an administrative panel. The website is fully responsive across all devices.
+## How to build & run
+Requirements: Java 17+, Maven installed.
 
-## Technologies Used
-- *Frontend:* HTML, CSS, JavaScript, Bootstrap  
-- *Backend:* Python, Django  
-- *Database:* Django ORM with admin panel  
+From project root:
+```
+mvn compile
+mvn exec:java
+```
+or single command:
+```
+mvn compile exec:java -Dexec.mainClass="com.example.library.Main"
+```
 
-## Website Pages
-- Home  
-- About Us  
-- Blog  
-- Contact  
+The application will create `library.db` in the project root and the `books` table if missing.
 
-## Key Features
-- Fully responsive design for Mobile, Tablet, Laptop, and Desktop  
-- CRUD operations for blog articles and programs  
-- Contact form for user messages  
-- Dynamic HTML rendering  
-- Admin panel for content and data management  
-
-## Setup Instructions
-1. Clone the repository:  
-   ```bash
-   git clone <repository-url>
